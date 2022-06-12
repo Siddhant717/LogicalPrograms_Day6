@@ -8,22 +8,36 @@ namespace LogicalPrograms
         {
             Console.WriteLine("Welcome to Basic Core Program");
 
-            int n1 = 0, n2 = 1, n3, i, number;
+            int n, i, sum;
+            int max, min;
 
-            Console.WriteLine("Enter the number of elements");
+            Console.WriteLine("Find the perfect number within the given range");
+            Console.WriteLine("Input the starting range or number");
+            min = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("input the ending range or number");
+            max = Convert.ToInt32(Console.ReadLine());
 
-            number = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write(n1 + " " + n2 + " ");
-
-            for (i = 2; i < number; i++)
+            Console.WriteLine("The perfect numbers within the given range");
+            for (n = min; n < max; n++)
             {
-                n3 = n1 + n2;
-                Console.Write(n3 + " ");
-                n1 = n2;
-                n2 = n3;
+                i = 1;
+                sum = 0;
+                while (i < n)
+                {
+                    if (n % i == 0)
+                        sum = sum + i;
+                    i++;
+
+
+                }
+
+                if (sum == n)
+                    Console.WriteLine("{0} ", n);
+              
             }
-            
-        }   
+
+        }
     }
 }
+
