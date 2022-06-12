@@ -8,30 +8,17 @@ namespace LogicalPrograms
         {
             Console.WriteLine("Welcome to Basic Core Program");
 
-            Console.WriteLine("Enter a number :");
+            int n, reverse = 0, rem;
+            Console.WriteLine("Enter the number");
+            n = Convert.ToInt32(Console.ReadLine());
 
-
-
-            int n = Convert.ToInt32(Console.ReadLine());
-            int count = 0;
-
-            for (int i = 1; i <= n; i++)
+            while (n != 0)
             {
-                if (n % i == 0)
-                {
-                    count++;
-                }
+                rem = n % 10;
+                reverse = reverse * 10 + rem;
+                n /= 10;
             }
-
-
-            if (count == 2)
-            {
-                Console.WriteLine("It is a Prime Number");
-            }
-            else
-            {
-                Console.WriteLine("It is not a Prime Number");
-            }
+            Console.WriteLine("reverse number :" + reverse);
 
 
 
